@@ -1,0 +1,83 @@
+### Register User Success
+POST http://localhost:3000/api/users
+Content-Type: application/json
+Accept: application/json
+
+{
+    "username": "anya123",
+    "password": "rahasia",
+    "name": "Anya Forger"
+}
+
+### Register User Failed
+POST http://localhost:3000/api/users
+Content-Type: application/json
+Accept: application/json
+
+{
+    "username": "anya1234",
+    "password": "1",
+    "name": "Anya Forger"
+}
+
+### Login User Success
+POST http://localhost:3000/api/users/login
+Content-Type: application/json
+Accept: application/json
+
+{
+    "username": "anya123",
+    "password": "rahasia"
+}
+
+### Login User Failed
+POST http://localhost:3000/api/users/login
+Content-Type: application/json
+Accept: application/json
+
+{
+    "username": "anya123",
+    "password": "rahasiaSALAH"
+}
+
+### Get User Success
+GET http://localhost:3000/api/users/current
+Authorization: YOUR_AUTH_TOKEN
+Accept: application/json
+
+### Get User Failed
+GET http://localhost:3000/api/users/current
+Authorization: YOUR_AUTH_TOKENSALAH
+Accept: application/json
+
+### Update User Success
+PATCH http://localhost:3000/api/users/current
+Authorization: YOUR_AUTH_TOKEN
+Content-Type: application/json
+Accept: application/json
+
+{
+    "name": "Ania Forger",
+    "password": "rahasia12"
+}
+
+### Update User Failed
+PATCH http://localhost:3000/api/users/current
+Authorization: YOUR_AUTH_TOKEN
+Content-Type: application/json
+Accept: application/json
+
+{
+    "name": "An",
+    "password": "rahasia123"
+}
+
+### Logout User Success
+DELETE  http://localhost:3000/api/users/current
+Authorization: YOUR_AUTH_TOKEN
+Accept: application/json
+
+### Logout User Failed
+DELETE  http://localhost:3000/api/users/current
+Authorization: YOUR_AUTH_TOKENSALAH
+Accept: application/json
