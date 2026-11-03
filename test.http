@@ -27,7 +27,7 @@ Accept: application/json
 
 {
     "username": "anya123",
-    "password": "rahasia"
+    "password": "rahasia12"
 }
 
 ### Login User Failed
@@ -80,4 +80,111 @@ Accept: application/json
 ### Logout User Failed
 DELETE  http://localhost:3000/api/users/current
 Authorization: YOUR_AUTH_TOKENSALAH
+Accept: application/json
+
+### Create Contact Success
+POST http://localhost:3000/api/contacts
+Authorization: YOUR_AUTH_TOKEN
+Content-Type: application/json
+Accept: application/json
+
+{
+    "firstName": "Yor",
+    "lastName": "Briar",
+    "phone": "081212121212",
+    "email": "yorbriar@gmail.com"
+}
+
+### Create Contact Success 2
+POST http://localhost:3000/api/contacts
+Authorization: YOUR_AUTH_TOKEN
+Content-Type: application/json
+Accept: application/json
+
+{
+    "firstName": "Fio",
+    "lastName": "Ria",
+    "phone": "081212121218",
+    "email": "fio@gmail.com"
+}
+
+### Create Contact Failed
+POST http://localhost:3000/api/contacts
+Authorization: YOUR_AUTH_TOKEN
+Content-Type: application/json
+Accept: application/json
+
+{
+    "firstName": "Yor",
+    "lastName": "B",
+    "phone": "081212121212",
+    "email": "yorbriargmail.com"
+}
+
+### Get Contact Succes 1
+GET http://localhost:3000/api/contacts/1
+Authorization: YOUR_AUTH_TOKEN
+Accept: application/json
+
+### Get Contact Succes 2
+GET http://localhost:3000/api/contacts/3
+Authorization: YOUR_AUTH_TOKEN
+Accept: application/json
+
+### Update Contact Success
+PUT http://localhost:3000/api/contacts/3
+Authorization: YOUR_AUTH_TOKEN
+Content-Type: application/json
+Accept: application/json
+
+{
+    "firstName": "Roni",
+    "lastName": "Kurniawan",
+    "phone": "081212121123",
+    "email": "ronik@gmail.com"
+}
+
+### Update Contact Succes 2
+PUT http://localhost:3000/api/contacts/3
+Authorization: YOUR_AUTH_TOKEN
+Content-Type: application/json
+Accept: application/json
+
+{
+    "firstName": "Roni",
+    "phone": "081212121123",
+    "email": "ronik@gmail.com"
+}
+
+### Update Contact Failed
+PUT http://localhost:3000/api/contacts/3salah
+Authorization: YOUR_AUTH_TOKEN
+Content-Type: application/json
+Accept: application/json
+
+{
+    "firstName": "ronii",
+    "lastName": "Kurniawan",
+    "phone": "081212121123",
+    "email": "ronik@gmail.com"
+}
+
+### Delete Contact Success
+DELETE  http://localhost:3000/api/contacts/3
+Authorization: YOUR_AUTH_TOKEN
+Accept: application/json
+
+### Delete Contact Failed
+DELETE  http://localhost:3000/api/contacts/salah
+Authorization: YOUR_AUTH_TOKEN
+Accept: application/json
+
+### Search Contact Success
+GET http://localhost:3000/api/contacts?name=fio&size=1&page=2
+Authorization: YOUR_AUTH_TOKEN
+Accept: application/json
+
+### Search Contact Failed
+GET http://localhost:3000/api/contacts?name=salah
+Authorization: YOUR_AUTH_TOKEN
 Accept: application/json
