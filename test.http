@@ -184,7 +184,96 @@ GET http://localhost:3000/api/contacts?name=fio&size=1&page=2
 Authorization: YOUR_AUTH_TOKEN
 Accept: application/json
 
+### Search Contact Success 2
+GET http://localhost:3000/api/contacts
+Authorization: 5bebc97f-befc-40e8-be3b-228dd1dd9734
+Accept: application/json
+
 ### Search Contact Failed
 GET http://localhost:3000/api/contacts?name=salah
 Authorization: YOUR_AUTH_TOKEN
+Accept: application/json
+
+### Create Address Success
+POST http://localhost:3000/api/contacts/4/addresses
+Authorization: 5bebc97f-befc-40e8-be3b-228dd1dd9734
+Content-Type: application/json
+Accept: application/json
+
+{
+    "street": "Jalan Fiona",
+    "city": "City Fiona",
+    "province": "Province Fiona",
+    "country": "Country Fiona",
+    "postalCode": "56534"
+}
+
+### Create Address Failed
+POST http://localhost:3000/api/contacts/1/addresses
+Authorization: 5bebc97f-befc-40e8-be3b-228dd1dd9734
+Content-Type: application/json
+Accept: application/json
+
+{
+    "street": "Jalan 123",
+    "city": "City 123",
+    "country": "Country 123"
+}
+
+### Get Contact Success
+GET http://localhost:3000/api/contacts/4/addresses/2
+Authorization: 5bebc97f-befc-40e8-be3b-228dd1dd9734
+Accept: application/json
+
+### Get Contact Failed
+GET http://localhost:3000/api/contacts/4/addresses/salah
+Authorization: 5bebc97f-befc-40e8-be3b-228dd1dd9734
+Accept: application/json
+
+### Update Address Success
+PUT http://localhost:3000/api/contacts/4/addresses/2
+Authorization: 5bebc97f-befc-40e8-be3b-228dd1dd9734
+Content-Type: application/json
+Accept: application/json
+
+{
+    "street": "Jalan FROST",
+    "city": "City FROST",
+    "province": "Province FROST",
+    "country": "Country FROST",
+    "postalCode": "56123"
+}
+
+### Update Address Failed
+PUT http://localhost:3000/api/contacts/4/addresses/2
+Authorization: 5bebc97f-befc-40e8-be3b-228dd1dd9734
+Content-Type: application/json
+Accept: application/json
+
+{
+    "street": "Jalan FROST",
+    "city": "City FROST",
+    "province": "Province FROST",
+    "country": "Country FROST"
+
+}
+
+### Remove Contact Success
+DELETE http://localhost:3000/api/contacts/1/addresses/1
+Authorization: 5bebc97f-befc-40e8-be3b-228dd1dd9734
+Accept: application/json
+
+### Remove Contact Failed
+DELETE http://localhost:3000/api/contacts/4/addresses/salah
+Authorization: 5bebc97f-befc-40e8-be3b-228dd1dd9734
+Accept: application/json
+
+### Remove Contact Failed
+DELETE http://localhost:3000/api/contacts/4/addresses/1
+Authorization: 5bebc97f-befc-40e8-be3b-228dd1dd9734SALAH
+Accept: application/json
+
+### List Contact Success
+GET http://localhost:3000/api/contacts/1/addresses
+Authorization: 5bebc97f-befc-40e8-be3b-228dd1dd9734
 Accept: application/json
